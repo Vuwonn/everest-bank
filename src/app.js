@@ -26,7 +26,10 @@ app.use(express.static('public'));
 app.use(cookieParser('keyboard cat'));
 
 // Import and use router
-import router from './routes/user.route.js';
-app.use('/user', router);
+import Userrouter from './routes/user.route.js';
+import NoteRouter from './routes/note.route.js';
+app.use('/api/v1/user', Userrouter);
+app.use('/api/v1/note', NoteRouter);
+
 
 export { app };
